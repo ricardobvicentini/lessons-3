@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1.5rem;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+section {
+    width: 90vw;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid dodgerblue;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    display: grid;
+    place-content: center;
+}
+
+.sec1 > div:first-child {
+    background-color: dodgerblue;
+    transform: translateX(-50%);
+}
+
+.sec1 > div:nth-child(2) {
+    background-color: yellow;
+    transform: translateY(-2rem);
+}
+
+.sec1 > div:last-child {
+    background-color: green;
+    transform: translate(100%, -5rem); /* Shorthand x e y */
+}
+
+.sec2 > div:first-child {
+    background-color: dodgerblue;
+    transform: rotateX(45deg); /* Gira em relação ao eixo X, 'achatando' o elemento (como se estivesse num espeto) */
+}
+
+.sec2 > div:nth-child(2) {
+    background-color: yellow;
+    transform: rotateY(45deg);
+}
+
+.sec2 > div:last-child {
+    background-color: green;
+    transform: rotateZ(78deg); /* Gira como um relógio - é o rotate() padrão */
+}
+
+.sec3 > div:first-child {
+    background-color: dodgerblue;
+    transform: scaleX(50%); /* Assume metade do seu tamanho no eixo x */
+}
+
+.sec3 > div:nth-child(2) {
+    background-color: yellow;
+    transform: scaleY(120%);
+}
+
+.sec3 > div:last-child {
+    background-color: green;
+    transform: scale(50%); 
+}
+
+.sec4 > div:first-child {
+    background-color: dodgerblue;
+    transform: skewX(25deg);
+}
+
+.sec4 > div:nth-child(2) {
+    background-color: yellow;
+    transform: skewY(15deg)
+}
+
+.sec4 > div:last-child {
+    background-color: green;
+    transform: skew(10deg, 20deg);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+footer > h2 > a {
+    text-decoration: none;
+    color: tomato;
+}
+
+a:is(:hover, :focus) {
+    filter: drop-shadow(1px 0 3px rgba(255, 99, 71, 0.5));
+}
