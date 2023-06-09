@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+
+:root {
+    /* fonts */
+    --FF: 'Nunito', sans-serif;
+    --FS: clamp(1.75rem, 3vh, 2.25rem); /* Não funciona - ??? */
+    /* Função clamp(min, ideal, max) */ 
+    /* Função min(x.xxrem, xvh) sempre aplicará o menor dos valores dentro do parênteses. Mas nunca ficará maior que o primeiro valor (valor absoluto).
+    Função max(x.xxrem, xvh) sempre aplicará o maior dos valores dentro do parênteses. Mas nunca ficará menor que o primeiro valor (valor absoluto).*/
+    --FS-SM: clamp(1.25rem, 2vh, 1.5rem);
+    --FS-XL: 3rem;
+    /* colors */
+    --BGCOLOR: #475569;
+    --ALT-BGCOLOR: #1e293b;
+    --RADIAL-COLOR: whitesmoke;
+    --LIGHT-COLOR: whitesmoke;
+    --DARK-COLOR: #000;
+    --SMALL-COLOR: pink;
+    --MEDIUM-COLOR: gold;
+    --LARGE-COLOR: firebrick;
+    --XL-COLOR: rebeccapurple;
+    --LAND-COLOR: dodgerblue;
+}
+
+/* GENERAL */
+
+body {
+    font-family: var(--FF);
+    font-size: var(--FS);
+    min-height: 100vh;
+    background-color: var(--BGCOLOR);
+    background-image: radial-gradient(var(--RADIAL-COLOR), var(--BGCOLOR));
+    display: flex;
+    flex-direction: column;
+}
+
+header, nav, main, footer {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 100%;
+    text-align: center;
+}
+
+header, footer {
+    position: sticky;
+    background-color: var(--ALT-BGCOLOR);
+    color: var(--LIGHT-COLOR);
+}
+
+header {
+    top: 0;
+}
+
+nav {
+    background-color: var(--LIGHT-COLOR);
+    color: var(--DARK-COLOR);
+    padding: 0.5rem;
+    border-bottom: 2px solid var(--DARK-COLOR);
+}
+
+.nav-bar {
+        display: none;
+    }
+
+main {
+    flex-grow: 1; /* Para ocupar a tela */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+}
+
+main > section {
+    flex-grow: 1;
+    font-size: var(--FS);
+    padding: 0.5rem;
+}
+
+main > aside {
+    background-color: hsla(0, 0%, 20%, 0.8);
+    color: var(--LIGHT-COLOR);
+    font-size: var(--FS-SM);
+    font-style: italic;
+    padding: 0.5rem;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.tooltip {
+    border-bottom: 1px dashed orange;
+    position: relative;
+}
+
+/* Tooltip - pesquisar */
+
+.tooltip:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -30px;
+    white-space: nowrap;
+    background-image: linear-gradient(dodgerblue, whitesmoke, dodgerblue);
+    color: hsla(0, 0%, 20%, 0.8);
+    padding: 2px;
+    border-radius: 5px;
+}
+
+a:any-link {
+    color: tomato;
+}
+
+a:is(:hover, :focus) {
+    filter: brightness(150%); /* Outra função */
+}
+
+footer {
+    bottom: 0;
+}
+
+footer a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--LIGHT-COLOR);
+    transition: .2s;
+}
+
+footer a:hover {
+    transform: scaleX(1.1);
+}
+
+@media screen and (min-width: 576px) {
+    main {
+        flex-flow: row nowrap;
+        justify-content: space-between;     
+    }
+
+    main > section {
+        width: calc(70% - 5px);
+    }
+
+    main > aside {
+        width: calc(30% - 5px);
+    }
+}
+
+
+/* 
+@media screen and (min-width: 576px) {
+    body {
+        background-color: var(--SMALL-COLOR);
+        background-image: radial-gradient(var(--RADIAL-COLOR), var(--SMALL-COLOR));
+    }
+
+    .nav-bar {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    body {
+        background-color: var(--MEDIUM-COLOR);
+        background-image: radial-gradient(var(--RADIAL-COLOR), var(--MEDIUM-COLOR));
+    }
+    
+    
+}
+
+
+
+@media screen and (min-width: 992px) {
+    body {
+        background-color: var(--LARGE-COLOR);
+        background-image: radial-gradient(var(--RADIAL-COLOR), var(--LARGE-COLOR));
+    }
+
+    
+}
+
+
+@media screen and (min-width: 1200px) {
+    body {
+        background-color: var(--XL-COLOR);
+        background-image: radial-gradient(var(--RADIAL-COLOR), var(--XL-COLOR));
+    }
+
+    
+}
+
+
+
+@media screen and (max-width: 425px) and (min-aspect-ratio: 7/4) {
+    body {
+        background-color: var(--LAND-COLOR);
+        background-image: radial-gradient(var(--RADIAL-COLOR), var(--LAND-COLOR));
+    }
+
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+
+    
+}
+
+ */

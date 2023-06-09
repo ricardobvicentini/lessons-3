@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-color: rgb(193, 206, 218);
+}
+
+nav {
+    border: 2px solid #333;
+    border-radius: 2rem;
+    margin: 0 auto 1rem;
+    /* O auto 'come' o espaço restante. */
+    max-width: 600px;
+    font-size: 3rem;
+    line-height: 6.5rem;
+    background-color: aliceblue;
+}
+
+h2 {
+    padding: 1rem;
+    background-image: linear-gradient(to bottom, rgb(0, 255, 221), rgb(255, 0, 0));
+    border-radius: 1.8rem 1.8rem 0 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    border-top: 1px solid #333;
+}
+
+li>a {
+    display: block;
+    /* A tag <a> é inline, portanto, alterar para block faz ela ocupar toda a width, assim você pode clicar em qualquer ligar dela para selecionar. */
+}
+
+li:nth-last-child(1)>a {
+    /* Ou apenas :last-child */
+    border-radius: 0 0 1.6rem 1.6rem;
+}
+
+li>a,
+li>a:visited {
+    text-decoration: none;
+    color: #333;
+}
+
+li>a:hover,
+li>a:focus {
+    /* Focus: para as propriedades serem aplicadas também na seleção com o teclado (movimentação com tab) */
+    background-image: linear-gradient(to top, #333, #636262);
+    color: whitesmoke;
+    cursor: pointer;
+}
